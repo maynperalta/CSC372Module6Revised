@@ -1,6 +1,6 @@
 package main;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Table {
 	public static void printTable(ArrayList<Student> list) {

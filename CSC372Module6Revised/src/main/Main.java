@@ -1,7 +1,6 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -37,10 +36,13 @@ public class Main {
 				if (scnr.hasNextInt()) {
 					rollno = scnr.nextInt();				
 					scnr.nextLine();
-					if (rollno > 0) {
-						break;
-					} else {
+					
+					if (rollno <= 0) {
 						System.out.println("Roll number must be positive.");
+					} else if (checkRoll(studentList, rollno)) {
+						System.out.println("Roll number already in system.");
+					} else {
+						break;
 					}
 				} else {
 					System.out.println("Invalid roll number. Please try again.");
@@ -85,5 +87,13 @@ public class Main {
 		Table.printTable(studentList);
 		System.out.println("");	
 		scnr.close();
+	}
+	private static boolean checkRoll (ArrayList<Student> list, int rollno) {
+		for (Student student : list) {
+			if (student.getRollno() == rollno) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

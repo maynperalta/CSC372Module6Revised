@@ -44,6 +44,8 @@ class SortByRollNo implements Comparator<Student> {
 class SortByName implements Comparator<Student> {
 	@Override
 	public int compare(Student a, Student b) {
-		return a.getLastName().compareToIgnoreCase(b.getLastName());
+		int last = a.getLastName().compareToIgnoreCase(b.getLastName());
+		if (last !=0) return last;
+		return a.getFirstName().compareToIgnoreCase(b.getFirstName());
 	}
 }
