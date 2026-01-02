@@ -14,6 +14,19 @@ public class Student {
 		this.lastName = lastName;
 		this.address = address;
 	}
+// Getter methods
+	public int getRollno() {
+		return rollno;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public String getAddress() {
+		return address;
+	}
 // Convert to string and format display	
 	@Override
 	public String toString() {
@@ -22,13 +35,14 @@ public class Student {
 }
 // Comparator class to sort students by roll number
 class SortByRollNo implements Comparator<Student> {
+	@Override
 	public int compare(Student a, Student b) {
-		return a.rollno - b.rollno;
+		return Integer.compare(a.getRollno(), b.getRollno());
 	}
 }
-// Comparator class to sort students by name
+// Comparator class to sort students by last name
 class SortByName implements Comparator<Student> {
 	public int compare(Student a, Student b) {
-		return a.lastName.compareToIgnoreCase(b.lastName);
+		return a.getLastName().compareToIgnoreCase(b.getLastName());
 	}
 }
