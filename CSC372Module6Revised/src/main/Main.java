@@ -8,12 +8,15 @@ public class Main {
 	public static void main(String[] args) {
 		ArrayList<Student> studentList = new ArrayList<>();
 		Scanner scnr = new Scanner(System.in);
-		final int NUMBER_OF_STUDENTS = 10;
+		int numStudents;
 		String name;
 		String address;
 		int rollno;
 // Input information for Student object
-		for (int i = 0; i < NUMBER_OF_STUDENTS; i ++) {
+		System.out.println("Enter the number of students to add:");
+		numStudents = scnr.nextInt();
+		
+		for (int i = 0; i < numStudents; i ++) {
 			System.out.println("\nEnter information for student " + (i + 1));
 // Validate integer input for roll number
 			while (true) {
@@ -53,7 +56,7 @@ public class Main {
 // Display ArrayList as entered and sorted by name and roll ID
 		System.out.println("Student Roster:");
 		System.out.println("---------------");
-		for (int i = 0; i < NUMBER_OF_STUDENTS; i++) {
+		for (int i = 0; i < numStudents; i++) {
 			System.out.println(studentList.get(i));
 			}
 		System.out.println("");
@@ -61,7 +64,7 @@ public class Main {
 		System.out.println("Student Roster Sorted By Last Name:");
 		System.out.println("-----------------------------------");
 		InsertionSort.sort(studentList, new SortByName());
-			for(int i = 0; i < NUMBER_OF_STUDENTS; i++) {
+			for(int i = 0; i < numStudents; i++) {
 				System.out.println(studentList.get(i));
 			}
 		System.out.println("");	
@@ -69,7 +72,7 @@ public class Main {
 		System.out.println("Student Roster Sorted By Roll Number:");
 		System.out.println("-------------------------------------");
 		InsertionSort.sort(studentList, new SortByRollNo());
-			for(int i = 0; i < NUMBER_OF_STUDENTS; i++) {
+			for(int i = 0; i < numStudents; i++) {
 				System.out.println(studentList.get(i));
 			}
 		System.out.println("");	
