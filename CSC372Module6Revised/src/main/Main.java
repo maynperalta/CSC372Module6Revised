@@ -14,9 +14,21 @@ public class Main {
 		String address;
 		int rollno;
 // Input information for Student object
-		System.out.println("Enter the number of students to add:");
-		numStudents = scnr.nextInt();
-		scnr.nextLine();
+		while (true) {
+			System.out.println("Enter the number of students to add:");
+			if (scnr.hasNextInt()) {
+				numStudents = scnr.nextInt();
+				scnr.nextLine();
+				if(numStudents > 0) {
+					break;
+				} else {
+					System.out.println("Number of students must be greater than 0.");
+				}
+			} else {
+				System.out.println("Please enter a whole number.");
+				scnr.nextLine();
+			}
+		}
 		
 		for (int i = 0; i < numStudents; i ++) {
 			System.out.println("\nEnter information for student " + (i + 1));
@@ -67,23 +79,23 @@ public class Main {
 		System.out.println("---------------");
 		for (Student student : studentList) {
 			System.out.println(student);
-			}
+		}
 		System.out.println("");
 		
 		System.out.println("Student Roster Sorted By Last Name:");
 		System.out.println("-----------------------------------");
 		InsertionSort.sort(studentList, new SortByName());
 		for(Student student : studentList) {
-				System.out.println(student);
+			System.out.println(student);
 		}
 		System.out.println("");	
 			
 		System.out.println("Student Roster Sorted By Roll Number:");
 		System.out.println("-------------------------------------");
 		InsertionSort.sort(studentList, new SortByRollNo());
-			for(Student student : studentList) {
-				System.out.println(student);
-			}
+		for(Student student : studentList) {
+			System.out.println(student);
+		}
 		System.out.println("");	
 		scnr.close();
 	}
