@@ -16,6 +16,7 @@ public class Main {
 // Input information for Student object
 		System.out.println("Enter the number of students to add:");
 		numStudents = scnr.nextInt();
+		scnr.nextLine();
 		
 		for (int i = 0; i < numStudents; i ++) {
 			System.out.println("\nEnter information for student " + (i + 1));
@@ -64,24 +65,24 @@ public class Main {
 // Display ArrayList as entered and sorted by name and roll ID
 		System.out.println("Student Roster:");
 		System.out.println("---------------");
-		for (int i = 0; i < numStudents; i++) {
-			System.out.println(studentList.get(i));
+		for (Student student : studentList) {
+			System.out.println(student);
 			}
 		System.out.println("");
 		
 		System.out.println("Student Roster Sorted By Last Name:");
 		System.out.println("-----------------------------------");
 		InsertionSort.sort(studentList, new SortByName());
-			for(int i = 0; i < numStudents; i++) {
-				System.out.println(studentList.get(i));
-			}
+		for(Student student : studentList) {
+				System.out.println(student);
+		}
 		System.out.println("");	
 			
 		System.out.println("Student Roster Sorted By Roll Number:");
 		System.out.println("-------------------------------------");
 		InsertionSort.sort(studentList, new SortByRollNo());
-			for(int i = 0; i < numStudents; i++) {
-				System.out.println(studentList.get(i));
+			for(Student student : studentList) {
+				System.out.println(student);
 			}
 		System.out.println("");	
 		scnr.close();
