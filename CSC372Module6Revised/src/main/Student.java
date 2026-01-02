@@ -27,11 +27,6 @@ public class Student {
 	public String getAddress() {
 		return address;
 	}
-// Convert to string and format display	
-	@Override
-	public String toString() {
-		return rollno + ": " + lastName + ", " + firstName + ", Address: " + address;
-	}
 }
 // Comparator class to sort students by roll number
 class SortByRollNo implements Comparator<Student> {

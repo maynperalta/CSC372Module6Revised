@@ -9,7 +9,7 @@ public class Table {
 			return;
 		}
 		System.out.printf("%-10s %-20s %-20s %-35s%n", "Roll No", "Last Name", "First Name", "Address");
-		System.out.print("--------------------------------------------------------------------------");
+		System.out.println("------------------------------------------------------------------------------");
 		
 		for (Student student : list) {
 			System.out.printf("%-10d %-20s %-20s %-35s%n",

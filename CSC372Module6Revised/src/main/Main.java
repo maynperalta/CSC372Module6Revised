@@ -70,6 +70,7 @@ public class Main {
 			studentList.add(new Student(rollno, firstName, lastName, address));
 		}
 // Display ArrayList as entered and sorted by name and roll ID
+		System.out.println("");
 		System.out.println("Student Roster:");
 		System.out.println("---------------");
 		Table.printTable(studentList);
