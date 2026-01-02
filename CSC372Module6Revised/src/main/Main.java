@@ -28,8 +28,7 @@ public class Main {
 				System.out.println("Please enter a whole number.");
 				scnr.nextLine();
 			}
-		}
-		
+		}	
 		for (int i = 0; i < numStudents; i ++) {
 			System.out.println("\nEnter information for student " + (i + 1));
 // Validate integer input for roll number
@@ -52,24 +51,18 @@ public class Main {
 			do {
 				System.out.println("Enter student first name: ");
 				firstName = scnr.nextLine().trim();
-				if(firstName.isEmpty()) {
-					System.out.println("First name cannot be empty.");
-				}
+				if(firstName.isEmpty()) System.out.println("First name cannot be empty.");
 			} while (firstName.isEmpty());
 			do {
 				System.out.println("Enter student last name: ");
 				lastName = scnr.nextLine().trim();
-				if (lastName.isEmpty()) {
-					System.out.println("Last name cannot be empty.");
-				}
+				if (lastName.isEmpty()) System.out.println("Last name cannot be empty.");
 			} while (lastName.isEmpty());
 // Validate string input for student address			
 			do {
 				System.out.println("Enter student address: ");
 				address = scnr.nextLine().trim();
-				if (address.isEmpty()) {
-					System.out.println("Address cannot be empty.");
-				}
+				if (address.isEmpty()) System.out.println("Address cannot be empty.");
 			} while (address.isEmpty());
 // Add student object to ArrayList			
 			studentList.add(new Student(rollno, firstName, lastName, address));
@@ -77,25 +70,19 @@ public class Main {
 // Display ArrayList as entered and sorted by name and roll ID
 		System.out.println("Student Roster:");
 		System.out.println("---------------");
-		for (Student student : studentList) {
-			System.out.println(student);
-		}
+		Table.printTable(studentList);
 		System.out.println("");
 		
 		System.out.println("Student Roster Sorted By Last Name:");
 		System.out.println("-----------------------------------");
 		InsertionSort.sort(studentList, new SortByName());
-		for(Student student : studentList) {
-			System.out.println(student);
-		}
+		Table.printTable(studentList);
 		System.out.println("");	
 			
 		System.out.println("Student Roster Sorted By Roll Number:");
 		System.out.println("-------------------------------------");
 		InsertionSort.sort(studentList, new SortByRollNo());
-		for(Student student : studentList) {
-			System.out.println(student);
-		}
+		Table.printTable(studentList);
 		System.out.println("");	
 		scnr.close();
 	}
