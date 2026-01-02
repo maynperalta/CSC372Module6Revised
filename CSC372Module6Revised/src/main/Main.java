@@ -9,7 +9,8 @@ public class Main {
 		ArrayList<Student> studentList = new ArrayList<>();
 		Scanner scnr = new Scanner(System.in);
 		int numStudents;
-		String name;
+		String firstName;
+		String lastName;
 		String address;
 		int rollno;
 // Input information for Student object
@@ -36,12 +37,19 @@ public class Main {
 			}
 // Validate string input for student names
 			do {
-				System.out.println("Enter student name (last name, first name): ");
-				name = scnr.nextLine().trim();
-				if (name.isEmpty()) {
-					System.out.println("Name cannot be empty.");
+				System.out.println("Enter student first name: ");
+				firstName = scnr.nextLine().trim();
+				if(firstName.isEmpty()) {
+					System.out.println("First name cannot be empty.");
 				}
-			} while (name.isEmpty());
+			} while (firstName.isEmpty());
+			do {
+				System.out.println("Enter student last name: ");
+				lastName = scnr.nextLine().trim();
+				if (lastName.isEmpty()) {
+					System.out.println("Last name cannot be empty.");
+				}
+			} while (lastName.isEmpty());
 // Validate string input for student address			
 			do {
 				System.out.println("Enter student address: ");
@@ -51,7 +59,7 @@ public class Main {
 				}
 			} while (address.isEmpty());
 // Add student object to ArrayList			
-			studentList.add(new Student(rollno, name, address));
+			studentList.add(new Student(rollno, firstName, lastName, address));
 		}
 // Display ArrayList as entered and sorted by name and roll ID
 		System.out.println("Student Roster:");
