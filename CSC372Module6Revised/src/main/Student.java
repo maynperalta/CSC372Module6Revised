@@ -3,12 +3,12 @@ package main;
 import java.util.*;
 
 public class Student {
-	int rollno;
-	String firstName;
-	String lastName;
-	String address;
+	private int rollno;
+	private String firstName;
+	private String lastName;
+	private String address;
 // Constructor function	
-	Student(int rollno, String firstName, String lastName, String address) {
+	public Student(int rollno, String firstName, String lastName, String address) {
 		this.rollno = rollno;
 		this.firstName = firstName;
 		this.lastName = lastName;
